@@ -506,31 +506,4 @@ public class Instrumenter implements Serializable {
 
     }
 
-    public <T extends TimestampedTuple> SingleOutputStreamOperator<T> addLatencyLogger(
-            DataStream<T> s, String outputFile) {
-
-        return s.filter(new RichFilterFunction<T>() {
-
-            private AvgStat log;
-
-            @Override
-            public void open(Configuration parameters) throws Exception {
-                log = new AvgStat(outputFile, true);
-            }
-
-            @Override
-            public void close() throws Exception {
-                log.close();
-            }
-
-            @Override
-            public boolean filter(T value) throws Exception {
-                log.add(System.currentTimeMillis() - value.getStimulus());
-                return true;
-            }
-
-        });
-
-    }
-
 }
