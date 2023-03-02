@@ -64,7 +64,7 @@ for t in ${!impl_types[@]}; do
 
 					mvn dependency:build-classpath -Dmdep.outputFile=tmp.txt
 					CLASSPATH=$(cat tmp.txt)
-					java -classpath ./target/aggregates_for_the_win-1.0-SNAPSHOT.jar:$CLASSPATH usecase.pallets.QueryJoin --inputDir data/input_files/pallets/ --outputFile ${exp_folder}/join_native.csv --injectionRateOutputFile ${exp_folder}/join_native_injectionRate.csv --throughputOutputFile ${exp_folder}/join_native_throughput.csv --latencyOutputFile ${exp_folder}/join_native_latency.csv --duration ${duration} --batchSize ${batch_size} --sleepTime ${sleepTime} --experimentID ${exp_id} --outputRateOutputFile ${exp_folder}/join_native_outputRate.csv --maxLatencyViolations 3 --maxLatency 15000 --implementationType ${type}
+					java -classpath ./target/aggregates_for_the_win-1.0-SNAPSHOT.jar:$CLASSPATH usecase.pallets.QueryJoin --inputDir data/input_files/pallets/ --outputFile ${exp_folder}/join.csv --injectionRateOutputFile ${exp_folder}/join_injectionRate.csv --throughputOutputFile ${exp_folder}/join_throughput.csv --latencyOutputFile ${exp_folder}/join_latency.csv --duration ${duration} --batchSize ${batch_size} --sleepTime ${sleepTime} --experimentID ${exp_id} --outputRateOutputFile ${exp_folder}/join_outputRate.csv --maxLatencyViolations 3 --maxLatency 15000 --implementationType ${type}
 
 					return=$?
 

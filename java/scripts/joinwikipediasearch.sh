@@ -68,7 +68,7 @@ for t in ${!impl_types[@]}; do
 					# Create classpath variable
 					mvn dependency:build-classpath -Dmdep.outputFile=tmp.txt
 					CLASSPATH=$(cat tmp.txt)
-					java -classpath ./target/aggregates_for_the_win-1.0-SNAPSHOT.jar:$CLASSPATH usecase.wikipedia.QueryJoin --inputFile data/input_files/insertions.tsv --outputFile ${exp_folder}/join_native.csv --type native --performance true --injectionRateOutputFile ${exp_folder}/join_${type}_injectionRate.csv --throughputOutputFile ${exp_folder}/join_${type}_throughput.csv --latencyOutputFile ${exp_folder}/join_${type}_latency.csv --duration ${duration} --batchSize ${batch_size} --sleepTime ${sleepTime} --experimentID ${exp_id} --outputRateOutputFile ${exp_folder}/join_${type}_outputRate.csv --maxLatencyViolations 3 --maxLatency 15000 --implementationType ${type}
+					java -classpath ./target/aggregates_for_the_win-1.0-SNAPSHOT.jar:$CLASSPATH usecase.wikipedia.QueryJoin --inputFile data/input_files/insertions.tsv --outputFile ${exp_folder}/join.csv --type native --performance true --injectionRateOutputFile ${exp_folder}/join_injectionRate.csv --throughputOutputFile ${exp_folder}/join_throughput.csv --latencyOutputFile ${exp_folder}/join_latency.csv --duration ${duration} --batchSize ${batch_size} --sleepTime ${sleepTime} --experimentID ${exp_id} --outputRateOutputFile ${exp_folder}/join_outputRate.csv --maxLatencyViolations 3 --maxLatency 15000 --implementationType ${type}
 
 					return=$?
 

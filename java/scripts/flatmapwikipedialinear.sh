@@ -57,7 +57,7 @@ for t in ${!impl_types[@]}; do
 				# Create classpath variable
 				mvn dependency:build-classpath -Dmdep.outputFile=tmp.txt
 				CLASSPATH=$(cat tmp.txt)
-				java -classpath ./target/aggregates_for_the_win-1.0-SNAPSHOT.jar:$CLASSPATH usecase.wikipedia.QueryFlatMap --inputFile data/input_files/insertions.tsv --outputFile ${exp_folder}/flatmap_native.csv --type native --injectionRateOutputFile ${exp_folder}/flatmap_native_injectionRate.csv --throughputOutputFile ${exp_folder}/flatmap_native_throughput.csv --latencyOutputFile ${exp_folder}/flatmap_native_latency.csv --duration ${duration} --batchSize ${batch_size} --sleepTime ${sleepTime} --experimentID ${exp_id} --outputRateOutputFile ${exp_folder}/flatmap_native_outputRate.csv --maxLatencyViolations 3 --maxLatency 15000 --implementationType ${type}
+				java -classpath ./target/aggregates_for_the_win-1.0-SNAPSHOT.jar:$CLASSPATH usecase.wikipedia.QueryFlatMap --inputFile data/input_files/insertions.tsv --outputFile ${exp_folder}/flatmap.csv --type native --injectionRateOutputFile ${exp_folder}/flatmap_injectionRate.csv --throughputOutputFile ${exp_folder}/flatmap_throughput.csv --latencyOutputFile ${exp_folder}/flatmap_latency.csv --duration ${duration} --batchSize ${batch_size} --sleepTime ${sleepTime} --experimentID ${exp_id} --outputRateOutputFile ${exp_folder}/flatmap_outputRate.csv --maxLatencyViolations 3 --maxLatency 15000 --implementationType ${type}
 
 				return=$?
 				if [ $return -eq 13 ]; then
