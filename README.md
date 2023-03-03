@@ -4,7 +4,7 @@ This is the repository for the code used in the paper "On the Semantic Overlap o
 
 **SETUP**
 
-For information about the input data, please check the paper. For convienence, the actual files used for the experiments can be downloaded from [here](https://drive.google.com/file/d/1gAmvWTLMAFkwJapby6lXmc3equSXu0yt/view?usp=share_link).
+For information about the input data, please check the paper ([here](https://arxiv.org/abs/2303.00793)). For convienence, the actual files used for the experiments can be downloaded from [here](https://drive.google.com/file/d/1gAmvWTLMAFkwJapby6lXmc3equSXu0yt/view?usp=share_link).
 
 To run experiments, you only need to download and run mvn clean package in the java folder
 
